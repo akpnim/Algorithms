@@ -53,7 +53,7 @@ def invert_sort(A):
 
 
 question = []
-with open ('/Users/adityapatel/Desktop/Back-end/stanford_algorithms/Course1/question_array.txt','r') as file:
+with open ('...ENTER TXT FILE ADDRESS HERE','r') as file:
     for line in file: 
         question.append(int(line)) #converting to int is important otherwise it will store as strings 
 
