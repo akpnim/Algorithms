@@ -1,6 +1,6 @@
-Python implementation of algorithms covered in the algorithms specialisation. These include: 
+Python implementation of algorithms covered in the algorithms specialisation. These include:<br>  
 
-(1) Karatsuba Multiplication [MergeSort]
+(1) Karatsuba Multiplication [MergeSort]<br>
 (2) Inversion Count [MergeSort]
 (3) QuickSort using first element as the pivot
 (4) QuickSort using last element as the pivot
