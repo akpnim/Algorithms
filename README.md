@@ -9,4 +9,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (7) Kosaraju's Algorithm for strongly connected components (SCC) of a directed graph [CHALLENGING] <br>
 (8) Dijkstra's Algorithm in O(m*n) i.e. the regular approach. (not heap based)<br>
 (9) Median maintenance - using two Heaps to maintain the median of an incoming stream of numbers. <br>
+(10) Two sum variation - hash table not necessary but could have been used. <br>
 .. to be continued
