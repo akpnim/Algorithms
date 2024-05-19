@@ -1,3 +1,6 @@
+#The solution below is more straightforward than using hash tables! Sometimes it is not necessary to use more complex data structures when the solution is simple. 
+#The goal is to find the number of distict tagets T in the inclusive range [-10000,10000] for the sum of x,y for distinct integers in A. 
+
 counter = 0 
 A =[]
 with open('ENTER FILE LOCATION','r') as file:
