@@ -10,4 +10,7 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (8) Dijkstra's Algorithm in O(m*n) i.e. the regular approach. (not heap based)<br>
 (9) Median maintenance - using two Heaps to maintain the median of an incoming stream of numbers. <br>
 (10) Two sum variation - hash table not necessary but could have been used. <br>
+(11) Greedy by difference - greedy algorithm that prioritizes by decreasing difference (weight - lengths). <br>
+(12) Greedy by ratio - optimal greedy algorithm that prioritizes by decreasing ratio (weight/length). <br> 
+(13) Primm's Algorithm for minimum spanning tree [although it uses a heap, improvements are possible]. <br> 
 .. to be continued
