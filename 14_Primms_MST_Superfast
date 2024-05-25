@@ -1,0 +1,139 @@
+import numpy 
+import math 
+import timeit
+import heapq
+import time
+
+start_time = time.time()
+
+def siftdown(heap, startpos, pos):
+    newitem = heap[pos]
+    # Follow the path to the root, moving parents down until finding a place
+    # newitem fits.
+    while pos > startpos:
+        parentpos = (pos - 1) >> 1
+        parent = heap[parentpos]
+        if newitem < parent:
+            heap[pos] = parent
+            pos = parentpos
+            continue
+        break
+    heap[pos] = newitem
+
+def siftup(heap, pos):
+    endpos = len(heap)
+    startpos = pos
+    newitem = heap[pos]
+    # Bubble up the smaller child until hitting a leaf.
+    childpos = 2*pos + 1    # leftmost child position
+    while childpos < endpos:
+        # Set childpos to index of smaller child.
+        rightpos = childpos + 1
+        if rightpos < endpos and not heap[childpos] < heap[rightpos]:
+            childpos = rightpos
+        # Move the smaller child up.
+        heap[pos] = heap[childpos]
+        pos = childpos
+        childpos = 2*pos + 1
+    # The leaf at pos is empty now.  Put newitem there, and bubble it up
+    # to its final resting place (by sifting its parents down).
+    heap[pos] = newitem
+    siftdown(heap, startpos, pos)
+
+def hdelete(H,i): #delete element from heap at position i 
+    H[i] = H[-1]
+    H.pop()
+    if i < len(H):
+        siftup(H,i)
+        siftdown(H, 0, i)
+
+def xor(a,b):
+    if a and b: 
+        return False 
+    if not a and not b: 
+        return False
+    if a and not b: 
+        return True 
+    if b and not a: 
+        return True 
+
+start = timeit.default_timer()
+
+A = []
+with open('ENTER FILE NAME','r') as file: 
+    for line in file:
+        int_line = [int(i) for i in line.split()]
+        A.append(int_line)
+
+A = A[1::]
+
+V = [[] for i in range(500)] 
+
+for element in A: 
+    V[element[0]-1].append(element)
+    V[element[1]-1].append(element)
+
+key = {} #each vertex has only one key 
+winner = {} #each vertex has only one winner
+X = {1} #initializing X as the subet of vertices in MST 
+T = set() #initialized as a empty list of paths that span the MST 
+H = [] #initializing our empty heap 
+
+#Time to initialize key and winner 
+
+for edge in A:
+    if xor(edge[0] in X, edge[1] in X): #if there are any crossing edges 
+        if edge[0] in X: #basically this if else is to make sure that we are assigning the vertex in V-X as the key 
+            v = edge[1]
+            key[v] = edge[2] 
+            winner[v] = edge
+        elif edge[1] in X: 
+            v = edge[0]
+            key[v] = edge[2]
+            winner[v] = edge 
+    else:
+        if edge[0] not in X: 
+            if edge[0] not in key:
+                v = edge[0]
+                key[v] = math.inf
+                winner[v] = None 
+        if edge[1] not in X: 
+            if edge[1] not in key:
+                v = edge[1]
+                key[v] = math.inf
+                winner[v] = None 
+    heapq.heappush(H,(key[v],v))
+
+print(H[0])
+
+#Initialization done! Print tests above check out! Now it is time to go to the main loop 
+while H:
+    a = heapq.heappop(H)
+    w = a[1]
+    X.add(w)
+    T.add((winner[w][0],winner[w][1],winner[w][2]))
+    edges = V[w-1]
+    for edge in edges: 
+        if xor(edge[0] in X, edge[1] in X):
+            if  edge[0] in X: #basically this if else is to make sure that we are assigning the vertex in V-X as y
+                y = edge[1]
+            elif edge[1] in X: 
+                y = edge[0]
+            if edge[2] < key[y]:
+                hdelete(H,H.index((key[y],y))) #deleting from heap 
+                key[y] = edge[2] #assigning the new winning edge distance to the key of that vertex in the dictionary 
+                winner[y] = edge #assinging the edge as the new winner 
+                heapq.heappush(H,(key[y],y)) #pushing the new key into the heap H 
+
+
+
+sum = 0
+for element in T: 
+    sum = sum + element[2]
+print(sum)
+
+end_time = time.time()
+
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time} seconds")
