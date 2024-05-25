@@ -1,8 +1,7 @@
 import numpy 
-import timeit
-import heapq
+import time
 
-start = timeit.default_timer()
+start_time = time.time()
 
 def xor(a,b):
     if a and b: 
@@ -22,22 +21,20 @@ with open('ENTER FILE NAME','r') as file:
 
 A = A[1::]
 
-X = [False]*500 
-X[0] = True #intiializing X 
-T = [] #initializing T 
+X = {1}
+T = []
 
-while X != [True]*500: 
+while len(X)!= 500: 
     temp = []
-    temp_dict = {}
     for edge in A: 
-        if xor(X[edge[0]-1],X[edge[1]-1]): 
-            heapq.heappush(temp,edge[2])
-            temp_dict[edge[2]] = edge
-    min_key = temp[0]
-    T.append(temp_dict[min_key])
-    X[temp_dict[min_key][0]-1] = True
-    X[temp_dict[min_key][1]-1] = True
-    A.pop(A.index(temp_dict[min_key])) 
+        if xor(edge[0] in X,edge[1] in X): 
+            temp.append(edge)
+    weights = [element[2] for element in temp]
+    index_by_weights = [i for i in numpy.argsort(weights)]
+    min_index = index_by_weights[0]
+    T.append(temp[min_index])
+    X.add(temp[min_index][0])
+    X.add(temp[min_index][1])
 
 weights = [element[2] for element in T]
 
@@ -48,9 +45,11 @@ for element in weights:
 
 print (sum)
 
+    
+end_time = time.time()
 
-stop = timeit.default_timer()
-
-print('Time:', stop - start)  
+# Calculate the elapsed time
+elapsed_time = end_time - start_time
+print(f"Elapsed time: {elapsed_time} seconds")
 
 
