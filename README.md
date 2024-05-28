@@ -15,4 +15,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (13) Primm's Algorithm for minimum spanning tree [non-heap based]. <br> 
 (14) Primm's Algorithm for minimum spanning tree [heap-based superfast!]. <br>
 (15) Kruskal's Algorithm applied via Union-Find to find max-spacing of a k-clustering. <br>
+(16) Kruskal's Algorithm applied via Union-Find to find max-clustering for a given hamming distance spacing for a large graph. [CHALLENGING] <br> 
 .. to be continued
