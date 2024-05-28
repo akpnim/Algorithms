@@ -14,4 +14,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (12) Greedy by ratio - optimal greedy algorithm that prioritizes by decreasing ratio (weight/length). <br> 
 (13) Primm's Algorithm for minimum spanning tree [non-heap based]. <br> 
 (14) Primm's Algorithm for minimum spanning tree [heap-based superfast!]. <br>
+(15) Kruskal's Algorithm applied via Union-Find to find max-spacing of a k-clustering. <br>
 .. to be continued
