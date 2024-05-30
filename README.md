@@ -17,4 +17,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (15) Kruskal's Algorithm applied via Union-Find to find max-spacing of a k-clustering. <br>
 (16) Kruskal's Algorithm applied via Union-Find to find max-clustering for a given hamming distance spacing for a large graph. [CHALLENGING] <br> 
 (17) Huffman Code - min and max bit-length finder using a custom binary tree + heap. <br> 
+(18) Dynamic Programming - Maximum weight independent set of a path graph <br> 
 .. to be continued
