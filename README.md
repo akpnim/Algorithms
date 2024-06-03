@@ -19,5 +19,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (17) Huffman Code - min and max bit-length finder using a custom binary tree + heap. <br> 
 (18) Dynamic Programming - Maximum weight independent set of a path graph <br> 
 (19) Dynamic - Knapsack - Iterative version <br>
-(20) Dynamic - Knapsack - Recursive version with caching to handle a large number of items/weight capacity <br> 
+(20) Dynamic - Knapsack - Recursive version with caching to handle a large number of items/weight capacity. [CHALLENGING] <br> 
 .. to be continued
