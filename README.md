@@ -20,4 +20,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (18) Dynamic Programming - Maximum weight independent set of a path graph <br> 
 (19) Dynamic - Knapsack - Iterative version <br>
 (20) Dynamic - Knapsack - Recursive version with caching to handle a large number of items/weight capacity. [CHALLENGING] <br> 
+(21) Dynamic - Bellman-Ford Algorithm implemented n times for all pairs shortest path problem. <br>  
 .. to be continued
