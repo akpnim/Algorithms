@@ -22,5 +22,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (20) Dynamic - Knapsack - Recursive version with caching to handle a large number of items/weight capacity. [CHALLENGING] <br> 
 (21) Dynamic - Bellman-Ford Algorithm implemented n times for all pairs shortest path problem. <br>  
 (22) Dynamic - Bellman-Held-Karp Algorithm for travelling salesman problem aka shortest tour calculation. [CHALLENGING]<br>
-(23) Dynamic - Bellman-Held-Karp Algorithm for travelling salesman problem aka shortest tour calculation[numpy array + concurrency] <br>
+(23) Dynamic - improved Bellman-Held-Karp Algorithm for travelling salesman problem aka shortest tour calculation [numpy array + concurrency] <br>
 .. to be continued
