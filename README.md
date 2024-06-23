@@ -24,4 +24,5 @@ Python implementation of algorithms covered in the algorithms specialisation. Th
 (22) Dynamic - Bellman-Held-Karp Algorithm for travelling salesman problem aka shortest tour calculation. [CHALLENGING]<br>
 (23) Dynamic - improved Bellman-Held-Karp Algorithm for travelling salesman problem aka shortest tour calculation [numpy array + concurrency] <br>
 (24) Heuristic - Travelling salesman problem using nearest neighbour search. [stable sort] <br> 
+(25) 2SAT proboblem via SCC - Kosaraju's Algorithm repeated <br>
 .. to be continued
